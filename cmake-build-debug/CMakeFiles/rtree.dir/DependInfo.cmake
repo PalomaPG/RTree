@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zeval/CLionProjects/rtree/main.cpp" "/home/zeval/CLionProjects/rtree/cmake-build-debug/CMakeFiles/rtree.dir/main.cpp.o"
+  "/home/paloma/Documents/Algo/Tareas/RTree/main.cpp" "/home/paloma/Documents/Algo/Tareas/RTree/cmake-build-debug/CMakeFiles/rtree.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
