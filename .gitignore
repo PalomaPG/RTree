@@ -1,4 +1,11 @@
 .idea
+<<<<<<< HEAD
+.idea/*
+# python
+*.pyc
+cmake-build-debug
+cmake-build-debug/*
+=======
 .idea/.name
 .idea/RTree.iml
 .idea/misc.xml
@@ -11,3 +18,4 @@
 cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/tmp/
 cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/tmp/
 cmake-build-debug/CMakeFiles/CMakeTmp/
+>>>>>>> 65d41c7915540bfc86e0304f81b91ef2cd0832f8
