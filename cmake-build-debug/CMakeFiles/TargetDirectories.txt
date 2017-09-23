@@ -1,3 +1,0 @@
-/home/paloma/Documents/Algo/Tareas/RTree/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/paloma/Documents/Algo/Tareas/RTree/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/paloma/Documents/Algo/Tareas/RTree/cmake-build-debug/CMakeFiles/rtree.dir

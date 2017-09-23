@@ -1,16 +1,21 @@
-.idea
-.idea/*
+# java project
+
+jRTree/.idea
+jRTree/.idea/*
+jRTree/*.iml
+jRTree/out
+jRTree/out/*
+jRTree/target
+jRTree/target/*
+
+#cplusplus project
+
+cplusplus/.idea
+cplusplus/.idea/*
+cplusplus/*.iml
+cplusplus/cmake-build-debug
+cplusplus/cmake-build-debug/*
+
 # python
+
 *.pyc
-cmake-build-debug
-cmake-build-debug/*
-.idea/.name
-.idea/RTree.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/
-.idea/*.xml
-cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/tmp/
-cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/tmp/
-cmake-build-debug/CMakeFiles/CMakeTmp/
