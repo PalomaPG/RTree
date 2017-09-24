@@ -19,4 +19,28 @@ public class MBRTest {
         assertEquals(mbr_1, mbr_2);
     }
 
+    /**
+     * Checks whether two MBRs intersect.
+     */
+    @Test
+    public void MBRIntersection(){
+        // arrange
+        Coord2D leftBottom1 = new Coord2D(0,0);
+        Coord2D topRight1 = new Coord2D(1,1);
+        Coord2D leftBottom2 = new Coord2D(0.5,0.5);
+        Coord2D topRight2 = new Coord2D(2,2);
+        MBR mbr1 = new MBR(leftBottom1, topRight1);
+        MBR mbr2 = new MBR(leftBottom2, topRight2);
+        MBR mbr3 = new MBR(leftBottom1, leftBottom2);
+        MBR mbr4 = new MBR(topRight1, topRight2);
+        // act
+        boolean intersect1 = mbr1.intersect(mbr2);
+        boolean intersect2 = mbr2.intersect(mbr1);
+        boolean intersect3 = mbr3.intersect(mbr4);
+        // assert
+        assertTrue(intersect1);
+        assertTrue(intersect2);
+        assertFalse(intersect3);
+    }
+
 }

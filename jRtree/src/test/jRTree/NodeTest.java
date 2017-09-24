@@ -1,4 +1,7 @@
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
@@ -16,7 +19,7 @@ public class NodeTest {
         // arrange
         int capacity = 3;
         // act
-        Node n = new Node(capacity);
+        INode n = new Node(capacity);
         // assert
         assertEquals(capacity, n.getCapacity());
         assertEquals(0, n.getCurSize());
@@ -28,7 +31,7 @@ public class NodeTest {
     @Test
     public void nodeInsertTest(){
         // arrange
-        Node n = new Node(3);  // Node with capacity of 3 node entries
+        INode n = new Node(3);  // Node with capacity of 3 node entries
         NodeEntry ne1 = new NodeEntry();  // Empty constructor
         NodeEntry ne2 = new NodeEntry(null, null);  // NodeEntry(mbr, nodePtr or objectId)
         NodeEntry ne3 = new NodeEntry(null, null);
@@ -49,14 +52,14 @@ public class NodeTest {
         // arrange
         MBR mbr_1 = new MBR(new double[][] {{0,0},{0,0},{0,0},{0,0}});
         MBR mbr_2 = new MBR(new double[][] {{1,1},{0,1},{0,0},{1,0}});
-        Node n = new Node(1);
+        INode n = new Node(1);
         n.insert(new NodeEntry(mbr_1, null));  // insert should accept NodeEntry and MBR objects
         // act
-        MBR mbr_3 = n.search(mbr_1);  // Searching is always about data in a NodeEntry
-        MBR mbr_4 = n.search(mbr_2);
+        ArrayList<MBR> mbrArray_1 = n.search(mbr_1);  // Searching is always about data in a NodeEntry
+        ArrayList<MBR> mbrArray_2 = n.search(mbr_2);
         // assert
-        assertEquals(mbr_1, mbr_3);
-        assertNull(mbr_4);
+        assertTrue(mbrArray_1.contains(mbr_1));
+        assertNull(mbrArray_2);
     }
 
     /**
@@ -68,7 +71,7 @@ public class NodeTest {
         MBR mbr_1 = new MBR(new double[][] {{0,0},{0,0},{0,0},{0,0}});
         MBR mbr_2 = new MBR(new double[][] {{0,0},{0,0},{0,0},{0,0}});
         NodeEntry ne = new NodeEntry(mbr_1, null);
-        Node n = new Node(3);
+        INode n = new Node(3);
         // act
         n.insert(ne);
         n.delete(mbr_2);  // Searches for node entry which stores the same data as the input

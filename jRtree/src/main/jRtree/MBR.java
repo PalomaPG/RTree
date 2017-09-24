@@ -1,4 +1,13 @@
-// MBR implementation. Assumes 2D rectangles, doesn't make any check.
+/**
+ * MBR implementation. Assumes 2D rectangles, doesn't make any check.
+ *
+ *      pt1-----------pt4
+ *       |             |
+ *       |             |
+ *       |             |
+ *      pt2-----------pt3
+ */
+
 
 public class MBR {
 
@@ -25,6 +34,27 @@ public class MBR {
         this.pt2 = pt2;
         this.pt3 = pt3;
         this.pt4 = pt4;
+    }
+
+    /**
+     * A MBR can also be defined using left-bottom and top-right corners.
+     */
+    public MBR(Coord2D leftBottom, Coord2D topRight){
+        this(new Coord2D(leftBottom.getX(), topRight.getY()), leftBottom,
+                new Coord2D(topRight.getX(), leftBottom.getY()), topRight);
+    }
+
+    /**
+     * Checks whether two MBRs intersect. Proves by contradiction.
+     */
+    public boolean intersect(MBR mbr){
+        // If a mbr is at left of the other
+        if (pt4.getX() < mbr.pt2.getX() || mbr.pt4.getX() < pt2.getX()){
+            return false;
+        } else if (pt4.getY() < mbr.pt2.getY() || mbr.pt4.getY() < pt2.getY()) {  // If a mbr is above the other
+            return false;
+        }
+        return true;
     }
 
     public Coord2D getPt1() {

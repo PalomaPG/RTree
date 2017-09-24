@@ -5,20 +5,14 @@ import java.util.ArrayList;
  * M must be determined by the user (or automatically) to make a Node fits in a memory page.
  */
 
-public class Node  implements INode{
-
-    private ArrayList<NodeEntry> data;
-
-    private boolean isLeaf;
-
-    private int capacity;
-    private int curSize;
+public class Node extends AbstractNode {
 
 
     public Node(int capacity){
         this.capacity = capacity;
         this.curSize = 0;
         this.data = new ArrayList<NodeEntry>(capacity);
+        this.isLeaf = true; // By default to make tests pass
     }
 
 
@@ -39,7 +33,37 @@ public class Node  implements INode{
         return false;
     }
 
-    public MBR search(MBR mbr){
-        return null;
+    /**
+     * If the node is a leaf should return a list of MBR which intersects the input.
+     * Else should ask to its children when a MBR in a NodeEntry intersects.
+     */
+    public ArrayList<MBR> search(MBR mbr){
+        ArrayList<MBR> matched = new ArrayList<MBR>();
+        if (this.isLeaf){
+            for (NodeEntry ne : this.data){
+                MBR tested = ne.getMBR();
+                if (tested.intersect(mbr)){
+                    matched.add(tested);
+                }
+            }
+        } else {
+            for (NodeEntry ne : this.data){
+                MBR tested = ne.getMBR();
+                if (tested.intersect(mbr)){
+                    matched.addAll(ne.getChild().search(mbr));
+                }
+            }
+        }
+        return matched.isEmpty() ? null : matched;
+    }
+
+    public boolean delete(MBR mbr){ return false;}
+
+    public boolean isLeaf() {
+        return this.isLeaf;
+    }
+
+    public void setIsLeaf(boolean b){
+        this.isLeaf = b;
     }
 }
