@@ -1,8 +1,10 @@
+package structure;
+
 import java.util.ArrayList;
 
 /**
- * Node class for RTree. A node can contain a maximum number of node entries M (Capacity).
- * M must be determined by the user (or automatically) to make a Node fits in a memory page.
+ * structure.Node class for RTree. A node can contain a maximum number of node entries M (Capacity).
+ * M must be determined by the user (or automatically) to make a structure.Node fits in a memory page.
  */
 
 public class Node extends AbstractNode {
@@ -34,8 +36,8 @@ public class Node extends AbstractNode {
     }
 
     /**
-     * If the node is a leaf should return a list of MBR which intersects the input.
-     * Else should ask to its children when a MBR in a NodeEntry intersects.
+     * If the node is a leaf should return a list of structure.MBR which intersects the genrect.
+     * Else should ask to its children when a structure.MBR in a structure.NodeEntry intersects.
      */
     public ArrayList<MBR> search(MBR mbr){
         ArrayList<MBR> matched = new ArrayList<MBR>();

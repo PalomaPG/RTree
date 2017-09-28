@@ -1,3 +1,5 @@
+package structure;
+
 public class NodeEntry{
 
     private MBR mbr;

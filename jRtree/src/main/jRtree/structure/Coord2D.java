@@ -1,4 +1,4 @@
-// Simple class to represent two-dimensional coordinates of real numbers
+package structure;// Simple class to represent two-dimensional coordinates of real numbers
 
 public class Coord2D {
 

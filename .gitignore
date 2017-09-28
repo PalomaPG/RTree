@@ -7,6 +7,13 @@ jRTree/out
 jRTree/out/*
 jRTree/target
 jRTree/target/*
+jRTree/bin
+jRTree/bin/*
+jRTree/*.csv
+jRTree/.classpath
+jRTree/.project
+jRTree/.settings
+jRTree/*#
 
 #cplusplus project
 

@@ -1,4 +1,7 @@
 import org.junit.Test;
+import structure.Coord2D;
+import structure.MBR;
+
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
@@ -13,8 +16,8 @@ public class MBRTest {
         double [] pt3 = {-1,-1};
         double [] pt4 = {-1,1};
         // act
-        MBR mbr_1 = new MBR(mbr_square);  // MBR using and array of points
-        MBR mbr_2 = new MBR(pt1, pt2, pt3, pt4);  // MBR(pt1, pt2, pt3, pt4) counterclockwise
+        MBR mbr_1 = new MBR(mbr_square);  // structure.MBR using and array of points
+        MBR mbr_2 = new MBR(pt1, pt2, pt3, pt4);  // structure.MBR(pt1, pt2, pt3, pt4) counterclockwise
         // assert
         assertEquals(mbr_1, mbr_2);
     }

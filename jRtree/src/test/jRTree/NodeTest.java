@@ -1,4 +1,8 @@
 import org.junit.Test;
+import structure.INode;
+import structure.MBR;
+import structure.Node;
+import structure.NodeEntry;
 
 import java.util.ArrayList;
 
@@ -7,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 
 /**
- * Test class for implementations of Node interface.
+ * Test class for implementations of structure.Node interface.
  */
 public class NodeTest {
 
@@ -26,14 +30,14 @@ public class NodeTest {
     }
 
     /**
-     * Test adding elements into a Node object without exceeding its maximum capacity.
+     * Test adding elements into a structure.Node object without exceeding its maximum capacity.
      */
     @Test
     public void nodeInsertTest(){
         // arrange
-        INode n = new Node(3);  // Node with capacity of 3 node entries
+        INode n = new Node(3);  // structure.Node with capacity of 3 node entries
         NodeEntry ne1 = new NodeEntry();  // Empty constructor
-        NodeEntry ne2 = new NodeEntry(null, null);  // NodeEntry(mbr, nodePtr or objectId)
+        NodeEntry ne2 = new NodeEntry(null, null);  // structure.NodeEntry(mbr, nodePtr or objectId)
         NodeEntry ne3 = new NodeEntry(null, null);
         // act
         n.insert(ne1);
@@ -45,7 +49,7 @@ public class NodeTest {
     }
 
     /**
-     * Test searching an element in the Node. Should return all
+     * Test searching an element in the structure.Node. Should return all
      */
     @Test
     public void nodeSearchTest(){
@@ -53,9 +57,9 @@ public class NodeTest {
         MBR mbr_1 = new MBR(new double[][] {{0,0},{0,0},{0,0},{0,0}});
         MBR mbr_2 = new MBR(new double[][] {{1,1},{0,1},{0,0},{1,0}});
         INode n = new Node(1);
-        n.insert(new NodeEntry(mbr_1, null));  // insert should accept NodeEntry and MBR objects
+        n.insert(new NodeEntry(mbr_1, null));  // insert should accept structure.NodeEntry and structure.MBR objects
         // act
-        ArrayList<MBR> mbrArray_1 = n.search(mbr_1);  // Searching is always about data in a NodeEntry
+        ArrayList<MBR> mbrArray_1 = n.search(mbr_1);  // Searching is always about data in a structure.NodeEntry
         ArrayList<MBR> mbrArray_2 = n.search(mbr_2);
         // assert
         assertTrue(mbrArray_1.contains(mbr_1));
@@ -63,7 +67,7 @@ public class NodeTest {
     }
 
     /**
-     * Test deleting elements from a Node.
+     * Test deleting elements from a structure.Node.
      */
     @Test
     public void nodeDeleteTest(){
@@ -74,7 +78,7 @@ public class NodeTest {
         INode n = new Node(3);
         // act
         n.insert(ne);
-        n.delete(mbr_2);  // Searches for node entry which stores the same data as the input
+        n.delete(mbr_2);  // Searches for node entry which stores the same data as the genrect
         // assert
         assertEquals(0, n.getCurSize());
         assertFalse(n.delete(mbr_2));  // Can't delete again

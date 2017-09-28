@@ -1,5 +1,7 @@
+package structure;
+
 /**
- * MBR implementation. Assumes 2D rectangles, doesn't make any check.
+ * structure.MBR implementation. Assumes 2D rectangles, doesn't make any check.
  *
  *      pt1-----------pt4
  *       |             |
@@ -37,7 +39,7 @@ public class MBR {
     }
 
     /**
-     * A MBR can also be defined using left-bottom and top-right corners.
+     * A structure.MBR can also be defined using left-bottom and top-right corners.
      */
     public MBR(Coord2D leftBottom, Coord2D topRight){
         this(new Coord2D(leftBottom.getX(), topRight.getY()), leftBottom,
