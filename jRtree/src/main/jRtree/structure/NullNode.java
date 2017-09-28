@@ -31,4 +31,8 @@ public class NullNode extends AbstractNode {
     public void setIsLeaf(boolean b) {
 
     }
+
+    public ArrayList<NodeEntry> getData() {
+        return null;
+    }
 }

@@ -68,4 +68,8 @@ public class Node extends AbstractNode {
     public void setIsLeaf(boolean b){
         this.isLeaf = b;
     }
+
+    public ArrayList<NodeEntry> getData() {
+        return data;
+    }
 }
