@@ -54,7 +54,7 @@ public class SynthGen extends AbstractGen {
 			double [] d = genSingleRectangle();
 			try {
 
-				this.raf.writeUTF(String.format("%f,%f,%f,%f\n", d[0], d[1], d[2], d[3]));
+				this.raf.writeChars(String.format("%f,%f,%f,%f\n", d[0], d[1], d[2], d[3]));
 				}
 			catch (IOException e) {
 				// TODO Auto-generated catch block
