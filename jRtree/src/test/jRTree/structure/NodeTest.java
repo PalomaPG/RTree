@@ -1,3 +1,5 @@
+package structure;
+
 import org.junit.Test;
 import structure.INode;
 import structure.MBR;
