@@ -25,3 +25,12 @@ cplusplus/cmake-build-debug/*
 # python
 
 *.pyc
+.idea
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+../.idea/
+jRtree/src/main/main.iml
+jRtree/src/test/test.iml
+out/
+synthdata-N8.csv
