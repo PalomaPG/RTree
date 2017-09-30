@@ -114,4 +114,6 @@ public class MBR {
     public double height(){
         return max_y()-min_y();
     }
+
+    public double area(){ return height()*width()}
 }

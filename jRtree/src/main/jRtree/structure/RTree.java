@@ -31,10 +31,12 @@ public class RTree {
 
         ArrayList<NodeEntry> nodeData = node.getData();
         NodeEntry minEnlargement = null;
-        double lastArea = -1;
+        double lastArea = Double.MAX_VALUE;
+        double min_mbr = Double.MAX_VALUE;
+
         for (NodeEntry entry : nodeData){  // O(node.curSize)
             double area = entry.calculateEnlargement(ne);
-            if (lastArea == -1 || lastArea > area){
+            if (lastArea > area){
                 lastArea = area;
                 minEnlargement = entry;
             }
