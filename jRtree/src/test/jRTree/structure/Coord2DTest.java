@@ -3,7 +3,7 @@ package structure;
 import org.junit.Test;
 import structure.Coord2D;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert.assertEquals;
 
 public class Coord2DTest {
 
