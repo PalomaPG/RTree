@@ -40,5 +40,9 @@ public class NodeEntryTest{
 
     }
 
-
+    @Test void nonZeroEnlargement(){
+        assertEquals(30, container.calcEnlargement(ne2));
+        asserFalse(30>container.calcEnlargement(ne2));
+        asserFalse(30<container.calcEnlargement(ne2));
+    }
 }
