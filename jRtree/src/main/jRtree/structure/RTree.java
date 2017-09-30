@@ -51,6 +51,6 @@ public class RTree {
     public Node getRoot() {
         return root;
     }
-
+    public void search(){}
 
 }
